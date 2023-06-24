@@ -1,0 +1,45 @@
+.watch-block {
+    position: absolute;
+    left: 50px;
+    bottom: 120px;
+    max-width: 400px;
+    color: white;
+    background-color: rgba(95, 125, 199, 0.69);
+    padding: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.watch-block__title {
+    margin-bottom: 20px;
+}
+
+.watch-block__description {
+    line-height: 25px;
+}
+
+.watch-block__play {
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    padding: 15px 50px 15px 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.watch-block__play:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/260/260446.png");
+    background-size: cover;
+}

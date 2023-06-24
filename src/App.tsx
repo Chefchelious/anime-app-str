@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import Toolbar from "./components/Toolbar/Toolbar";
+import Home from "./containers/Home/Home";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-     test
-    </div>
+    <>
+      <Toolbar/>
+      <Home/>
+    </>
   );
-}
+};
 
 export default App;

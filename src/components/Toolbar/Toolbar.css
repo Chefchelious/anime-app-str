@@ -1,0 +1,43 @@
+.header {
+    padding: 15px 0;
+    background-color: rgba(54, 52, 52, 0.7);
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo-wrap {
+    width: 175px;
+    cursor: pointer;
+}
+
+.header__logo {
+    width: 100%;
+    height: auto;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav__link {
+    color: white !important;
+    cursor: pointer; /* убрать +- */
+}
+
+.nav__link:hover {
+    color: #ccbfbf !important;
+}
+
+.nav__link:active {
+    color: #ccbfbf !important;
+}
