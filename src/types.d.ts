@@ -23,3 +23,8 @@ export interface IAnimeAPI {
      large_image_url: string;
    }};
 }
+
+type TSquare = {
+  hasItem: boolean;
+  clicked: boolean
+};

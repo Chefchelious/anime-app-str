@@ -7,6 +7,9 @@ import Popular from "./containers/Popular/Popular";
 import AnimeInfo from "./containers/AnimeInfo/AnimeInfo";
 import ContactUs from "./containers/ContactUs/ContactUs";
 import {IAnimeAPI} from "./types";
+import Portfolio from "./containers/Portfolio/Portfolio";
+import Burger from "./Examples/Burger/Burger";
+import Thomas from "./Examples/Thomas/Thomas";
 
 const baseUrl = "https://api.jikan.moe/v4";
 
@@ -33,6 +36,12 @@ const App = () => {
         <Route path="/popular/:id" element={(<AnimeInfo id={selectedID} />)} />
 
         <Route path="/contact_us" element={(<ContactUs />)} />
+
+        <Route path="/portfolio" element={(<Portfolio />)}>
+          <Route path="burger" element={(<Burger />)} />
+          <Route path="thomas" element={(<Thomas />)} />
+        </Route>
+
         <Route path="*" element={(<h1>Not Found</h1>)} />
       </Routes>
     </>

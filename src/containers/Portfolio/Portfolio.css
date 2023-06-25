@@ -1,0 +1,16 @@
+.app__wrap {
+    margin: 15px 0;
+}
+
+.app__title {
+    margin-bottom: 20px;
+}
+
+.app__title span {
+    font-weight: normal;
+}
+
+.app__btn {
+    padding: 5px;
+    cursor: pointer;
+}
