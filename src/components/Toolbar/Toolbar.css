@@ -38,6 +38,6 @@
     color: #ccbfbf !important;
 }
 
-.nav__link:active {
+.nav__link.active {
     color: #ccbfbf !important;
 }

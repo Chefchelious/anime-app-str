@@ -75,7 +75,7 @@ export const ImageSlider = () => {
     position: 'absolute',
     left: '50%',
     transform: 'translateX(-50%)',
-    bottom: '25px',
+    bottom: '35px',
     background: 'rgba(211, 211, 211, 0.64)',
     padding: '10px',
     borderRadius: '20px'
