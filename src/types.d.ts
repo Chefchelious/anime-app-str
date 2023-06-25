@@ -27,4 +27,15 @@ export interface IAnimeAPI {
 type TSquare = {
   hasItem: boolean;
   clicked: boolean
+}
+
+export type TIngredient = {
+  name: string;
+  price: number;
+  image: string
 };
+
+export type TStateIngredient = {
+  name: string;
+  count: number
+}
