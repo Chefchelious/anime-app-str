@@ -23,7 +23,7 @@ const Toolbar = () => {
             </li>
 
             <li className="nav__item">
-              <NavLink to="/airing" className="nav__link">Airing</NavLink>
+              <NavLink to="/contact_us" className="nav__link"> Contact us</NavLink>
             </li>
           </ul>
         </nav>

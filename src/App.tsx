@@ -4,8 +4,8 @@ import axios from "axios";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Home from "./containers/Home/Home";
 import Popular from "./containers/Popular/Popular";
-import Airing from "./containers/Airing/Airing";
 import AnimeInfo from "./containers/AnimeInfo/AnimeInfo";
+import ContactUs from "./containers/ContactUs/ContactUs";
 import {IAnimeAPI} from "./types";
 
 const baseUrl = "https://api.jikan.moe/v4";
@@ -17,7 +17,6 @@ const App = () => {
 
   const fetchData = useCallback(async () => {
       const response = await axios.get(`${baseUrl}/top/anime?filter=bypopularity`); // узнать насчет типизации, тк можно работать только с response.data.data
-    console.log(response.data.data[0]);
       setPopularAnime(response.data.data);
   }, []);
 
@@ -33,7 +32,8 @@ const App = () => {
         <Route path="/popular" element={(<Popular popularAnime={popularAnime} setID={setSelectedID} />)} />
         <Route path="/popular/:id" element={(<AnimeInfo id={selectedID} />)} />
 
-        <Route path="/airing" element={(<Airing />)} />
+        <Route path="/contact_us" element={(<ContactUs />)} />
+        <Route path="*" element={(<h1>Not Found</h1>)} />
       </Routes>
     </>
   );

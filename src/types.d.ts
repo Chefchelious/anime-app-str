@@ -7,11 +7,17 @@ export interface ISlide {
 
 export interface IAnimeAPI {
   mal_id: number;
-  airing: boolean;
   episodes: number;
+  duration: string;
   rating: string;
   title_english: string;
-  year: number;
+  score: string;
+  scored_by: number;
+  status: string;
+  source: string;
+  aired: {
+    string: string;
+  }
  images: {
    jpg: {
      large_image_url: string;
