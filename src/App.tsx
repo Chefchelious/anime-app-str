@@ -6,10 +6,10 @@ import Home from "./containers/Home/Home";
 import Popular from "./containers/Popular/Popular";
 import AnimeInfo from "./containers/AnimeInfo/AnimeInfo";
 import ContactUs from "./containers/ContactUs/ContactUs";
-import {IAnimeAPI, IAnimeApiResponse} from "./types";
 import Portfolio from "./containers/Portfolio/Portfolio";
 import Burger from "./Examples/Burger/Burger";
 import Thomas from "./Examples/Thomas/Thomas";
+import {IAnimeAPI, IAnimeApiResponse} from "./types";
 
 const baseUrl = "https://api.jikan.moe/v4";
 
@@ -19,7 +19,7 @@ const App = () => {
   const [selectedID, setSelectedID] = useState<number | null>(null);
 
   const fetchData = useCallback(async () => {
-      const response = await axios.get<IAnimeApiResponse>(`${baseUrl}/top/anime?filter=bypopularity`); // узнать насчет типизации, тк можно работать только с response.data.data
+      const response = await axios.get<IAnimeApiResponse>(`${baseUrl}/top/anime?filter=bypopularity`);
       setPopularAnime(response.data.data);
   }, []);
 

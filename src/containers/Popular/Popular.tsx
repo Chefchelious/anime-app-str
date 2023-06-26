@@ -1,8 +1,8 @@
 import React from 'react';
-import {IAnimeAPI} from "../../types";
-import './Popular.css';
-import AnimeCard from "../../components/AnimeCard/AnimeCard";
 import {Link} from "react-router-dom";
+import {IAnimeAPI} from "../../types";
+import AnimeCard from "../../components/AnimeCard/AnimeCard";
+import './Popular.css';
 
 interface IProps {
   popularAnime: IAnimeAPI[];
