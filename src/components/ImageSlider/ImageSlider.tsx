@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {slides} from "../../constants";
 import WatchItem from "../WatchItem/WatchItem";
 export const ImageSlider = () => {
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
@@ -18,20 +17,15 @@ export const ImageSlider = () => {
   }, [currentIndex]);
 
   useEffect(() => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-
-    timerRef.current = setTimeout(() => {
+    const interval = setInterval(() => {
       goToNext();
     }, 5000);
 
     return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
+      clearInterval(interval);
     };
   }, [goToNext]);
+
 
   const sliderStyle: React.CSSProperties = {
     height: '100%',
@@ -44,7 +38,7 @@ export const ImageSlider = () => {
     height: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    transition: 'background-image 0.7s ease',
+    transition: 'background 0.7s ease-in-out',
   };
 
   const leftArrowStyle: React.CSSProperties = {
@@ -88,7 +82,7 @@ export const ImageSlider = () => {
     borderRadius: '50%',
     justifyContent: 'center',
     position: 'relative',
-    transition: 'background-color 0.7s ease',
+    transition: '0.7s ease',
   };
 
   const renderDotStyle = (slideIndex: number): React.CSSProperties => {

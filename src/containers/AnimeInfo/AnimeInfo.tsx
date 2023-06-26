@@ -24,8 +24,6 @@ const AnimeInfo: React.FC<IProps> = ({id}) => {
     if(id !== null) {
       const animeResponse = await axios.get(`${baseUrl}/anime/${id}`);
 
-      console.log(animeResponse.data.data);
-
       setAnime(animeResponse.data.data);
     } else {
       navigate('/popular');

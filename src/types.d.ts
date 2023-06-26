@@ -5,6 +5,10 @@ export interface ISlide {
   info: string;
 }
 
+export interface IAnimeApiResponse {
+  data: IAnimeAPI[];
+}
+
 export interface IAnimeAPI {
   mal_id: number;
   episodes: number;
