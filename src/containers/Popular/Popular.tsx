@@ -6,10 +6,9 @@ import './Popular.css';
 
 interface IProps {
   popularAnime: IAnimeAPI[];
-  setID: (id: number) => void;
 }
 
-const Popular: React.FC<IProps>= ({popularAnime, setID}) => {
+const Popular: React.FC<IProps>= ({popularAnime}) => {
 
   return (
     <div className="container" style={{ paddingTop: '150px'}}>
@@ -18,7 +17,6 @@ const Popular: React.FC<IProps>= ({popularAnime, setID}) => {
         {popularAnime.map(anime => (
           <Link to={`/popular/${anime.mal_id}`} key={anime.mal_id}
                className="card-wrapper"
-                onClick={() => setID(anime.mal_id)}
           >
             <AnimeCard anime={anime} />
           </Link>

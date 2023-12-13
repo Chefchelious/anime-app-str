@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import axios from "axios";
 import {IAnimeAPI} from "../../types";
 
@@ -7,31 +7,27 @@ import plakImg from '../../img/plak.png';
 
 import './AnimeInfo.css';
 
-interface IProps {
-  id: number | null;
-}
-
 const baseUrl = "https://api.jikan.moe/v4";
 
-const AnimeInfo: React.FC<IProps> = ({id}) => {
+const AnimeInfo: React.FC = () => {
+
+  const { id } = useParams() as { id: string };
 
   const [anime, setAnime] = useState<IAnimeAPI | null>(null);
-  const navigate = useNavigate();
 
   const fetchData = useCallback(async () => {
-
-
-    if(id !== null) {
+    try {
       const animeResponse = await axios.get(`${baseUrl}/anime/${id}`);
 
       setAnime(animeResponse.data.data);
-    } else {
-      navigate('/popular');
+    } catch (e) {
+      console.log(e);
+      alert('Something went wrong!');
     }
-  }, [id, navigate]);
+  }, [id]);
 
   useEffect(() => {
-    fetchData().catch(e => console.error(e));
+    void fetchData();
   }, [fetchData]);
 
 
